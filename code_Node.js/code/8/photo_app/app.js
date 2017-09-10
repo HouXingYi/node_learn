@@ -13,7 +13,7 @@ var photos = require('./routes/photos');
 var app = express();
 
 // all environments
-app.set('port', process.env.PORT || 3000);
+app.set('port', process.env.PORT || 8081);
 app.set('views', __dirname + '/views');
 app.set('view engine', 'ejs');
 app.use(express.favicon());
@@ -37,6 +37,6 @@ app.post('/upload', photos.submit(app.get('photos')));
 app.get('/photo/:id/download', photos.download(app.get('photos')));
 
 
-http.createServer(app).listen(app.get('port'), function(){
+http.createServer(app).listen(app.get('port'),'127.0.0.1',function(){
   console.log('Express server listening on port ' + app.get('port'));
 });
