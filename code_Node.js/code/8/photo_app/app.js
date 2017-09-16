@@ -13,7 +13,7 @@ var photos = require('./routes/photos');
 var app = express();
 
 // all environments
-app.set('port', process.env.PORT || 8081);
+app.set('port', process.env.PORT || 8082);
 app.set('views', __dirname + '/views');
 app.set('view engine', 'ejs');
 app.use(express.favicon());
